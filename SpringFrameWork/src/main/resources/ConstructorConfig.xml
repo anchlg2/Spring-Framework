@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+">
+    <bean class="com.SpringCore.Constructor.Certi" name="certi1">
+        <constructor-arg>
+            <value>Java</value>
+        </constructor-arg>
+    </bean>
+    <bean class="com.SpringCore.Constructor.Person" name="person1">
+  <constructor-arg>
+      <value>Anchal</value>
+  </constructor-arg>
+        <constructor-arg>
+            <value>456</value>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="certi1"/>
+        </constructor-arg>
+    </bean>
+    <bean class="com.SpringCore.Constructor.Certi" name="certi2">
+        <constructor-arg>
+            <value>Python</value>
+        </constructor-arg>
+    </bean>
+    <bean class="com.SpringCore.Constructor.Person" name="person2">
+        <constructor-arg value="Tara"/>
+        <constructor-arg value="123"/>
+        <constructor-arg ref="certi2"/>
+    </bean>
+    <bean class="com.SpringCore.Constructor.Certi" name="certi3">
+        <constructor-arg>
+            <value>Spring</value>
+        </constructor-arg>
+    </bean>
+    <bean class="com.SpringCore.Constructor.Person" name="person3" c:name="Meesho" c:personId="567" c:certi-ref="certi3"/>
+</beans>
